@@ -18,25 +18,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r0E-4D-tHg">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r0E-4D-tHg">
+                                <rect key="frame" x="0.0" y="20" width="375" height="197"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YlN-wW-yNb" userLabel="Logo">
-                                        <rect key="frame" x="67.5" y="0.0" width="240" height="557"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dE-wN-MGW" userLabel="Profile">
-                                        <rect key="frame" x="165.5" y="557" width="44" height="30"/>
+                                        <rect key="frame" x="165.5" y="100" width="44" height="37"/>
                                         <state key="normal" title="Profile"/>
+                                        <connections>
+                                            <segue destination="z6t-FK-3sd" kind="show" id="DGC-r4-KXq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6m-C6-o8g" userLabel="Live Data">
-                                        <rect key="frame" x="155.5" y="587" width="64" height="30"/>
+                                        <rect key="frame" x="155.5" y="137" width="64" height="30"/>
                                         <state key="normal" title="Live Data"/>
+                                        <connections>
+                                            <segue destination="AZR-bl-NO7" kind="show" id="hTd-Rw-y4p"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7S-ac-tEY" userLabel="History">
-                                        <rect key="frame" x="162.5" y="617" width="50" height="30"/>
+                                        <rect key="frame" x="162.5" y="167" width="50" height="30"/>
                                         <state key="normal" title="History"/>
+                                        <connections>
+                                            <segue destination="c7Y-li-e0D" kind="show" id="Ylo-C2-evK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="YlN-wW-yNb" secondAttribute="trailing" id="u2f-89-vk4"/>
+                                    <constraint firstItem="YlN-wW-yNb" firstAttribute="leading" secondItem="r0E-4D-tHg" secondAttribute="leading" id="wBU-yF-OVc"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,14 +57,14 @@
                             <constraint firstItem="r0E-4D-tHg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1sW-UC-fl2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r0E-4D-tHg" secondAttribute="trailing" id="HG9-CS-s23"/>
                             <constraint firstItem="r0E-4D-tHg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ior-jJ-Fn0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r0E-4D-tHg" secondAttribute="bottom" id="s5m-x0-Hfm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r0E-4D-tHg" secondAttribute="bottom" constant="450" id="s5m-x0-Hfm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="62" y="35"/>
+            <point key="canvasLocation" x="61.600000000000001" y="34.632683658170919"/>
         </scene>
         <!--Profile Controller-->
         <scene sceneID="Sio-wT-rGF">
@@ -96,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baM-Nc-f1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="727"/>
+            <point key="canvasLocation" x="1049" y="773"/>
         </scene>
     </scenes>
 </document>
