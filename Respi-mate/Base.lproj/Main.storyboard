@@ -31,46 +31,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r0E-4D-tHg">
-                                <rect key="frame" x="0.0" y="64" width="375" height="153"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YlN-wW-yNb" userLabel="Logo">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dE-wN-MGW" userLabel="Profile">
-                                        <rect key="frame" x="165.5" y="63" width="44" height="30"/>
-                                        <state key="normal" title="Profile"/>
-                                        <connections>
-                                            <segue destination="z6t-FK-3sd" kind="show" id="DGC-r4-KXq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6m-C6-o8g" userLabel="Live Data">
-                                        <rect key="frame" x="155.5" y="93" width="64" height="30"/>
-                                        <state key="normal" title="Live Data"/>
-                                        <connections>
-                                            <segue destination="AZR-bl-NO7" kind="show" id="hTd-Rw-y4p"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7S-ac-tEY" userLabel="History">
-                                        <rect key="frame" x="162.5" y="123" width="50" height="30"/>
-                                        <state key="normal" title="History"/>
-                                        <connections>
-                                            <segue destination="c7Y-li-e0D" kind="show" id="Ylo-C2-evK"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YlN-wW-yNb" userLabel="Logo">
+                                <rect key="frame" x="0.0" y="89" width="375" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="YlN-wW-yNb" secondAttribute="trailing" id="u2f-89-vk4"/>
-                                    <constraint firstItem="YlN-wW-yNb" firstAttribute="leading" secondItem="r0E-4D-tHg" secondAttribute="leading" id="wBU-yF-OVc"/>
+                                    <constraint firstAttribute="height" constant="100" id="8EA-gv-Gvm"/>
                                 </constraints>
-                            </stackView>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dE-wN-MGW" userLabel="Profile">
+                                <rect key="frame" x="0.0" y="214" width="375" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="ptD-fF-adT"/>
+                                </constraints>
+                                <state key="normal" title="Profile"/>
+                                <connections>
+                                    <segue destination="z6t-FK-3sd" kind="show" id="DGC-r4-KXq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6m-C6-o8g" userLabel="Live Data">
+                                <rect key="frame" x="0.0" y="264" width="375" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="dct-Rt-khX"/>
+                                </constraints>
+                                <state key="normal" title="Live Data"/>
+                                <connections>
+                                    <segue destination="AZR-bl-NO7" kind="show" id="hTd-Rw-y4p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7S-ac-tEY" userLabel="History">
+                                <rect key="frame" x="0.0" y="314" width="375" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="sq8-tL-0OQ"/>
+                                </constraints>
+                                <state key="normal" title="History"/>
+                                <connections>
+                                    <segue destination="c7Y-li-e0D" kind="show" id="Ylo-C2-evK"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.83529411760000005" green="0.94901960780000005" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="r0E-4D-tHg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1sW-UC-fl2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r0E-4D-tHg" secondAttribute="trailing" id="HG9-CS-s23"/>
-                            <constraint firstItem="r0E-4D-tHg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ior-jJ-Fn0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r0E-4D-tHg" secondAttribute="bottom" constant="450" id="s5m-x0-Hfm"/>
+                            <constraint firstItem="2dE-wN-MGW" firstAttribute="top" secondItem="YlN-wW-yNb" secondAttribute="bottom" constant="25" id="6TW-MT-8DG"/>
+                            <constraint firstItem="YlN-wW-yNb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="6rD-wo-gmk"/>
+                            <constraint firstItem="F6m-C6-o8g" firstAttribute="top" secondItem="2dE-wN-MGW" secondAttribute="bottom" constant="25" id="BrH-AB-BuL"/>
+                            <constraint firstItem="F6m-C6-o8g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="E5J-cf-LcR"/>
+                            <constraint firstItem="YlN-wW-yNb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G4n-BZ-dvw"/>
+                            <constraint firstItem="2dE-wN-MGW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PN0-LC-gbJ"/>
+                            <constraint firstItem="YlN-wW-yNb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RB4-Yx-Mlp"/>
+                            <constraint firstItem="w7S-ac-tEY" firstAttribute="top" secondItem="F6m-C6-o8g" secondAttribute="bottom" constant="25" id="WW1-fg-Yaw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w7S-ac-tEY" secondAttribute="trailing" id="d6P-Ub-wov"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F6m-C6-o8g" secondAttribute="trailing" id="fMD-XE-GkY"/>
+                            <constraint firstItem="w7S-ac-tEY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sIr-xH-zgs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2dE-wN-MGW" secondAttribute="trailing" id="yJv-jA-iB1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -87,7 +98,17 @@
                     <view key="view" contentMode="scaleToFill" id="0nP-V4-8JS" userLabel="ProfileView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="j9o-4G-4W7">
+                                <rect key="frame" x="129" y="190" width="117" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Male"/>
+                                    <segment title="Female"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.83529411760000005" green="0.94901960780000005" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Irp-CQ-Xn7"/>
                     </view>
                 </viewController>
@@ -102,7 +123,7 @@
                     <view key="view" contentMode="scaleToFill" id="32W-If-fu6" userLabel="LiveDataView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.83529411760000005" green="0.94901960780000005" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="1Hd-Dv-hoS"/>
                     </view>
                 </viewController>
@@ -118,7 +139,7 @@
                     <view key="view" contentMode="scaleToFill" id="ktz-8Q-F2R" userLabel="History View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.83529411760000005" green="0.94901960780000005" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="qxV-o2-jn0"/>
                     </view>
                 </viewController>
@@ -140,6 +161,7 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfd-Hc-ZGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem systemItem="refresh" id="MLe-Cj-c34"/>
             </objects>
             <point key="canvasLocation" x="61.600000000000001" y="34.632683658170919"/>
         </scene>
