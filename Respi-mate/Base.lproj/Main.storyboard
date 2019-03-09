@@ -17,7 +17,35 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="MenuView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r0E-4D-tHg">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YlN-wW-yNb" userLabel="Logo">
+                                        <rect key="frame" x="67.5" y="0.0" width="240" height="557"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dE-wN-MGW" userLabel="Profile">
+                                        <rect key="frame" x="165.5" y="557" width="44" height="30"/>
+                                        <state key="normal" title="Profile"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6m-C6-o8g" userLabel="Live Data">
+                                        <rect key="frame" x="155.5" y="587" width="64" height="30"/>
+                                        <state key="normal" title="Live Data"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7S-ac-tEY" userLabel="History">
+                                        <rect key="frame" x="162.5" y="617" width="50" height="30"/>
+                                        <state key="normal" title="History"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="r0E-4D-tHg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1sW-UC-fl2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r0E-4D-tHg" secondAttribute="trailing" id="HG9-CS-s23"/>
+                            <constraint firstItem="r0E-4D-tHg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ior-jJ-Fn0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r0E-4D-tHg" secondAttribute="bottom" id="s5m-x0-Hfm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
