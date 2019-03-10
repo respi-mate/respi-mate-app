@@ -7,12 +7,11 @@
 //
 
 import UIKit
-
+import Charts
 
 class HistoryViewController: UIViewController {
     
-    @IBOutlet weak var lineChartView: UIView!
-    
+    @IBOutlet weak var lineChartView: LineChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
