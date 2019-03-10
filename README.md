@@ -1,3 +1,3 @@
 # respi-mate-app
 
-Code for our HealthHack project 
+Code for our HealthHack project app
