@@ -15,7 +15,6 @@ class MenuViewController: UIViewController {
     
     // IBOutlets
     @IBOutlet weak var RRlabel: UILabel!
-    
 
     // variables
     var centralManager: CBCentralManager!
@@ -33,6 +32,15 @@ class MenuViewController: UIViewController {
         // initialise label of RR peak to be empty
         RRlabel.text = " "
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Determine what segue destination is
+        if segue.destination is HistoryViewController {
+            let vc = segue.destination as? HistoryViewController
+            vc.y = values
+        }
+    }
+    
 }
 
 

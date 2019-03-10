@@ -9,6 +9,13 @@
 import UIKit
 import Charts
 
+// initialisin variables
+let t_period = 0.2
+var iterator = 0;
+var time: [Double] = []
+var y: [Double] = []
+
+
 class HistoryViewController: UIViewController {
     
     @IBOutlet weak var lineChartView: LineChartView!
@@ -16,12 +23,13 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        // TODO: receive x and y values from MenuViewController
+        // TODO: x and y values. y is from MenuViewController
+        
         
         
         
         // initialises graph upon loading
-        //setChartValues()
+        setChartValues()
         
         // makes bubbles appear when you click on data
         let marker:BalloonMarker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
@@ -33,7 +41,7 @@ class HistoryViewController: UIViewController {
         lineChartView.marker = marker
     }
     
-    /*
+    
     // TODO: need to modify based on inputs received
     func setChartValues() {
         
@@ -60,5 +68,5 @@ class HistoryViewController: UIViewController {
         //TODO: titles and axes labels to graphs
         
     }
-    */
+    
 }
