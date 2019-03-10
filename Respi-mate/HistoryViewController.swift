@@ -18,14 +18,16 @@ var y: [Double] = []
 
 class HistoryViewController: UIViewController {
     
-    var y: [Double] = []
+    var myY: [Double] = []
+
     @IBOutlet weak var lineChartView: LineChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
         // TODO: x and y values. y is from MenuViewController
-        
+        y = myY
+        print(y)
         
         
         

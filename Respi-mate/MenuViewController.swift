@@ -15,6 +15,11 @@ class MenuViewController: UIViewController {
     
     // IBOutlets
     @IBOutlet weak var RRlabel: UILabel!
+    @IBAction func historyButton(_ sender: Any) {
+        performSegue(withIdentifier: "historyVC", sender: self)
+    }
+    
+    
     
     // variables
     var centralManager: CBCentralManager!
@@ -24,6 +29,12 @@ class MenuViewController: UIViewController {
     var characteristicASCIIValue = NSString()
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        var historyController = segue.destination as! HistoryViewController
+        historyController.myY = values
+    }
+    
     override func viewDidLoad() {
         
         centralManager = CBCentralManager(delegate: self, queue: nil)
@@ -32,17 +43,6 @@ class MenuViewController: UIViewController {
         // initialise label of RR peak to be empty
         RRlabel.text = " "
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "historyVC" {
-            let historyViewController = segue.destination as! HistoryViewController
-            
-            //Pass data to historyViewController
-            historyViewController.y = values
-        }
-    }
-    
-    
 }
 
 
@@ -136,7 +136,7 @@ extension MenuViewController: CBPeripheralDelegate {
         if characteristic == rxCharacteristic {
             if let ASCIIstring = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue) {
                 characteristicASCIIValue = ASCIIstring
-                print("Value Recieved: \((characteristicASCIIValue as String))")
+                //print("Value Recieved: \((characteristicASCIIValue as String))")
                 NotificationCenter.default.post(name:NSNotification.Name(rawValue: "Notify"), object: nil)
             }
         }
