@@ -9,6 +9,7 @@
 import UIKit
 import CoreBluetooth
 
+var values: [Double] = []
 
 class MenuViewController: UIViewController {
     
@@ -55,7 +56,6 @@ extension MenuViewController: CBCentralManagerDelegate {
         }
     }
     
-    
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         print(peripheral)
         bluefruitPeripheral = peripheral
@@ -64,12 +64,10 @@ extension MenuViewController: CBCentralManagerDelegate {
         centralManager.connect(peripheral)
     }
     
-    
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print("Connected!")
         bluefruitPeripheral.discoverServices(nil)
     }
-    
 }
 
 
@@ -85,7 +83,7 @@ extension MenuViewController: CBPeripheralDelegate {
         
         for service in services {
             peripheral.discoverCharacteristics(nil, for: service)
-            print(service)
+            //print(service)
         }
     }
     
@@ -100,7 +98,7 @@ extension MenuViewController: CBPeripheralDelegate {
             return
         }
         
-        print("Found \(characteristics.count) characteristics!")
+        //print("Found \(characteristics.count) characteristics!")
         
         for characteristic in characteristics {
             //looks for the right characteristic
@@ -113,16 +111,15 @@ extension MenuViewController: CBPeripheralDelegate {
                 // We can return after calling CBPeripheral.setNotifyValue because CBPeripheralDelegate's
                 // didUpdateNotificationStateForCharacteristic method will be called automatically
                 peripheral.readValue(for: characteristic)
-                print("Rx Characteristic: \(characteristic.uuid)")
+                //print("Rx Characteristic: \(characteristic.uuid)")
             }
             if characteristic.uuid.isEqual(BLE_Characteristic_uuid_Tx){
                 txCharacteristic = characteristic
-                print("Tx Characteristic: \(characteristic.uuid)")
+                //print("Tx Characteristic: \(characteristic.uuid)")
             }
             peripheral.discoverDescriptors(for: characteristic)
         }
     }
-    
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         
@@ -133,6 +130,10 @@ extension MenuViewController: CBPeripheralDelegate {
                 NotificationCenter.default.post(name:NSNotification.Name(rawValue: "Notify"), object: nil)
             }
         }
+        
+        // convert string input from Rx to Double array
+        let val = characteristicASCIIValue.doubleValue
+        values.append(val)
+        //print(values)
     }
-    
 }

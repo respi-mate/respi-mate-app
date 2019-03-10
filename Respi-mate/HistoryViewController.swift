@@ -21,7 +21,7 @@ class HistoryViewController: UIViewController {
         
         
         // initialises graph upon loading
-        setChartValues()
+        //setChartValues()
         
         // makes bubbles appear when you click on data
         let marker:BalloonMarker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
@@ -33,7 +33,7 @@ class HistoryViewController: UIViewController {
         lineChartView.marker = marker
     }
     
-    
+    /*
     // TODO: need to modify based on inputs received
     func setChartValues() {
         
@@ -60,5 +60,5 @@ class HistoryViewController: UIViewController {
         //TODO: titles and axes labels to graphs
         
     }
-    
+    */
 }
