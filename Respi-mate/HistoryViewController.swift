@@ -34,6 +34,7 @@ class HistoryViewController: UIViewController {
         lineChartView.marker = marker
     }
     
+    
     // TODO: need to modify based on inputs received
     func setChartValues() {
         

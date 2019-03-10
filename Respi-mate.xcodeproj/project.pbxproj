@@ -14,6 +14,7 @@
 		32AC23DC2233E2DE00691209 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32AC23DB2233E2DE00691209 /* Assets.xcassets */; };
 		32AC23DF2233E2DE00691209 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32AC23DD2233E2DE00691209 /* LaunchScreen.storyboard */; };
 		32AC23EB2233ECF700691209 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AC23EA2233ECF700691209 /* HistoryViewController.swift */; };
+		7D3CF7A2813389E22A7097DE /* Pods_Respi_mate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8CB0E69B26714864465525 /* Pods_Respi_mate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		32AC23DE2233E2DE00691209 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32AC23E02233E2DE00691209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32AC23EA2233ECF700691209 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		6E906AF93724D5E3CEBB5C24 /* Pods-Respi-mate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Respi-mate.release.xcconfig"; path = "Target Support Files/Pods-Respi-mate/Pods-Respi-mate.release.xcconfig"; sourceTree = "<group>"; };
+		7F8CB0E69B26714864465525 /* Pods_Respi_mate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Respi_mate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D23011870DCA633C60A8CD6E /* Pods-Respi-mate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Respi-mate.debug.xcconfig"; path = "Target Support Files/Pods-Respi-mate/Pods-Respi-mate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D3CF7A2813389E22A7097DE /* Pods_Respi_mate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				32AC23D32233E2DC00691209 /* Respi-mate */,
 				32AC23D22233E2DC00691209 /* Products */,
+				DB2C3D9AD5610D8F16818734 /* Pods */,
+				D936A14422E96004429F6B34 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +77,24 @@
 			path = "Respi-mate";
 			sourceTree = "<group>";
 		};
+		D936A14422E96004429F6B34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F8CB0E69B26714864465525 /* Pods_Respi_mate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB2C3D9AD5610D8F16818734 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D23011870DCA633C60A8CD6E /* Pods-Respi-mate.debug.xcconfig */,
+				6E906AF93724D5E3CEBB5C24 /* Pods-Respi-mate.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32AC23E32233E2DE00691209 /* Build configuration list for PBXNativeTarget "Respi-mate" */;
 			buildPhases = (
+				F2C8E8A28FB9100351D52570 /* [CP] Check Pods Manifest.lock */,
 				32AC23CD2233E2DC00691209 /* Sources */,
 				32AC23CE2233E2DC00691209 /* Frameworks */,
 				32AC23CF2233E2DC00691209 /* Resources */,
+				F82C520F7C9D291ED2776197 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F2C8E8A28FB9100351D52570 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Respi-mate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F82C520F7C9D291ED2776197 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Respi-mate/Pods-Respi-mate-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Respi-mate/Pods-Respi-mate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		32AC23CD2233E2DC00691209 /* Sources */ = {
@@ -288,6 +362,7 @@
 		};
 		32AC23E42233E2DE00691209 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D23011870DCA633C60A8CD6E /* Pods-Respi-mate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -306,6 +381,7 @@
 		};
 		32AC23E52233E2DE00691209 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E906AF93724D5E3CEBB5C24 /* Pods-Respi-mate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
