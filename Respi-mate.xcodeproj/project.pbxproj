@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3241B6D722352860000E621E /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3241B6D622352860000E621E /* BalloonMarker.swift */; };
+		3241B6D9223530CC000E621E /* UUIDKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3241B6D8223530CC000E621E /* UUIDKey.swift */; };
 		32AC23D52233E2DC00691209 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AC23D42233E2DC00691209 /* AppDelegate.swift */; };
 		32AC23D72233E2DC00691209 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AC23D62233E2DC00691209 /* MenuViewController.swift */; };
 		32AC23DA2233E2DC00691209 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32AC23D82233E2DC00691209 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		3241B6D622352860000E621E /* BalloonMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		3241B6D8223530CC000E621E /* UUIDKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDKey.swift; sourceTree = "<group>"; };
 		32AC23D12233E2DC00691209 /* Respi-mate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Respi-mate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32AC23D42233E2DC00691209 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32AC23D62233E2DC00691209 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			children = (
 				32AC23D42233E2DC00691209 /* AppDelegate.swift */,
 				32AC23D62233E2DC00691209 /* MenuViewController.swift */,
+				3241B6D8223530CC000E621E /* UUIDKey.swift */,
 				32AC23EA2233ECF700691209 /* HistoryViewController.swift */,
 				3241B6D622352860000E621E /* BalloonMarker.swift */,
 				32AC23D82233E2DC00691209 /* Main.storyboard */,
@@ -222,6 +225,7 @@
 				32AC23D72233E2DC00691209 /* MenuViewController.swift in Sources */,
 				32AC23EB2233ECF700691209 /* HistoryViewController.swift in Sources */,
 				32AC23D52233E2DC00691209 /* AppDelegate.swift in Sources */,
+				3241B6D9223530CC000E621E /* UUIDKey.swift in Sources */,
 				3241B6D722352860000E621E /* BalloonMarker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
