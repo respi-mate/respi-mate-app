@@ -14,6 +14,7 @@ let t_period = 0.2
 var iterator = 0;
 var time: [Double] = []
 var y: [Double] = []
+var timeVal = 0.0
 
 
 class HistoryViewController: UIViewController {
@@ -27,10 +28,11 @@ class HistoryViewController: UIViewController {
        
         // TODO: time and y values. y is from MenuViewController
         y = myY
-        for i in 1...y.count {
+        
+        /*for i in 1...y.count {
             let second = Double(i) * t_period
             time.append(second)
-        }
+        }*/
         
         // initialises graph upon loading
         setChartValues()
@@ -55,7 +57,7 @@ class HistoryViewController: UIViewController {
         let entries = (0..<y.count).map { (i) -> ChartDataEntry in
             let yVal = y[i]
             
-            let timeVal = time[i]
+            timeVal = timeVal + t_period
             return ChartDataEntry(x: timeVal, y: yVal)
         }
         

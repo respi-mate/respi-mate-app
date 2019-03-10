@@ -256,7 +256,7 @@ extension MenuViewController: CBPeripheralDelegate {
         //print(values)
         if flag < 200 {
             temp.append(val)
-            flag += 1
+            flag  = flag + 1
         }
         //print(temp)
     }
