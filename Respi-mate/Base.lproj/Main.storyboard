@@ -117,6 +117,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="gAl-7M-R4b"/>
+                    <connections>
+                        <outlet property="RRlabel" destination="3PP-p2-d1X" id="PLX-im-9WH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,7 +133,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IQH-Vr-7AP" userLabel="LineChartView">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IQH-Vr-7AP" userLabel="LineChartView" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="16" y="106" width="343" height="318"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -140,7 +143,7 @@
                         <viewLayoutGuide key="safeArea" id="qxV-o2-jn0"/>
                     </view>
                     <connections>
-                        <outlet property="lineChartView" destination="IQH-Vr-7AP" id="OdB-6O-khl"/>
+                        <outlet property="lineChartView" destination="IQH-Vr-7AP" id="W1d-3j-LKf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baM-Nc-f1E" userLabel="First Responder" sceneMemberID="firstResponder"/>

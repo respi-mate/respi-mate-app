@@ -91,7 +91,6 @@
 				D23011870DCA633C60A8CD6E /* Pods-Respi-mate.debug.xcconfig */,
 				6E906AF93724D5E3CEBB5C24 /* Pods-Respi-mate.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -129,6 +128,11 @@
 				TargetAttributes = {
 					32AC23D02233E2DC00691209 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
