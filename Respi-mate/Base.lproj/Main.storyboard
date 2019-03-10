@@ -139,6 +139,9 @@
                         <color key="backgroundColor" red="0.83529411760000005" green="0.94901960780000005" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="qxV-o2-jn0"/>
                     </view>
+                    <connections>
+                        <outlet property="lineChartView" destination="IQH-Vr-7AP" id="OdB-6O-khl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baM-Nc-f1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
