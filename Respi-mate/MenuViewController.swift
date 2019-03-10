@@ -15,7 +15,7 @@ class MenuViewController: UIViewController {
     
     // IBOutlets
     @IBOutlet weak var RRlabel: UILabel!
-
+    
     // variables
     var centralManager: CBCentralManager!
     var bluefruitPeripheral: CBPeripheral!
@@ -34,12 +34,14 @@ class MenuViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Determine what segue destination is
-        if segue.destination is HistoryViewController {
-            let vc = segue.destination as? HistoryViewController
-            vc.y = values
+        if segue.identifier == "historyVC" {
+            let historyViewController = segue.destination as! HistoryViewController
+            
+            //Pass data to historyViewController
+            historyViewController.y = values
         }
     }
+    
     
 }
 

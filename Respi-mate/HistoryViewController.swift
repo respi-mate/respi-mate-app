@@ -18,6 +18,7 @@ var y: [Double] = []
 
 class HistoryViewController: UIViewController {
     
+    var y: [Double] = []
     @IBOutlet weak var lineChartView: LineChartView!
     
     override func viewDidLoad() {

@@ -69,9 +69,9 @@
 			children = (
 				32AC23D42233E2DC00691209 /* AppDelegate.swift */,
 				32AC23D62233E2DC00691209 /* MenuViewController.swift */,
-				3241B6D8223530CC000E621E /* UUIDKey.swift */,
 				32AC23EA2233ECF700691209 /* HistoryViewController.swift */,
 				3241B6D622352860000E621E /* BalloonMarker.swift */,
+				3241B6D8223530CC000E621E /* UUIDKey.swift */,
 				32AC23D82233E2DC00691209 /* Main.storyboard */,
 				32AC23DB2233E2DE00691209 /* Assets.xcassets */,
 				32AC23DD2233E2DE00691209 /* LaunchScreen.storyboard */,
