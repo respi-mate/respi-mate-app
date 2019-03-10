@@ -19,8 +19,6 @@ class MenuViewController: UIViewController {
         performSegue(withIdentifier: "historyVC", sender: self)
     }
     
-    
-    
     // variables
     var centralManager: CBCentralManager!
     var bluefruitPeripheral: CBPeripheral!
@@ -29,12 +27,6 @@ class MenuViewController: UIViewController {
     var characteristicASCIIValue = NSString()
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        var historyController = segue.destination as! HistoryViewController
-        historyController.myY = values
-    }
-    
     override func viewDidLoad() {
         
         centralManager = CBCentralManager(delegate: self, queue: nil)
@@ -42,6 +34,13 @@ class MenuViewController: UIViewController {
         
         // initialise label of RR peak to be empty
         RRlabel.text = " "
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        var historyController = segue.destination as! HistoryViewController
+        historyController.myY = values
     }
 }
 
