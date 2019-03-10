@@ -44,7 +44,7 @@ class HistoryViewController: UIViewController {
             return ChartDataEntry(x: timeVal, y: yVal)
         }
         
-        let set = LineChartDataSet(values: entries, label: "Breathing")
+        let set = LineChartDataSet(values: entries, label: "Respiratory Rate")
         let data = LineChartData(dataSet: set)
         self.lineChartView.data = data
         
@@ -56,6 +56,8 @@ class HistoryViewController: UIViewController {
         // modify lineChartView
         self.lineChartView.dragYEnabled = false
         self.lineChartView.rightAxis.enabled = false
+        
+        //TODO: titles and axes labels to graphs
         
     }
     
