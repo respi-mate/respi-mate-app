@@ -10,6 +10,8 @@ import UIKit
 import CoreBluetooth
 
 var values: [Double] = []
+var flag = 0
+var temp: [Double] = []
 
 class MenuViewController: UIViewController {
     
@@ -33,7 +35,7 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         
         // initialise label of RR peak to be empty
-        RRlabel.text = " "
+        RRlabel.text = "18"
     }
     
     
@@ -42,6 +44,114 @@ class MenuViewController: UIViewController {
         var historyController = segue.destination as! HistoryViewController
         historyController.myY = values
     }
+    
+    
+    func procesData() {
+        while temp.count < 199 {
+            
+        }
+        
+        //temp.removeAll()
+        flag = 0
+        
+        let (signals,avgFilter,stdFilter) = ThresholdingAlgo(y: temp, lag: 90, threshold: 1.3, influence: 1)
+        
+        var indx: [Int] = []
+        indx.append(0)
+        
+        for i in 1...signals.count - 1 {
+            if (signals[i] + signals[i - 1] == 1) && signals[i - 1] == 0 {
+                if (i - indx.last!) > 50 {
+                    indx.append(i)
+                }
+            }
+        }
+        //print(indx)
+        
+        var freq: [Double] = []
+        
+        for i in 1...indx.count - 1 {
+            let temp = Double(indx[i] - indx[i - 1])
+            freq.append(60/(temp * 0.2))
+        }
+        
+        var avg_freq = 0.0
+        
+        for i in 0...freq.count - 1 {
+            avg_freq = avg_freq + freq[i]
+        }
+        avg_freq = avg_freq / Double(freq.count)
+        RRlabel.text = String(avg_freq)
+        
+    }
+    
+    // Function to calculate the arithmetic mean
+    func arithmeticMean(array: [Double]) -> Double {
+        var total: Double = 0
+        for number in array {
+            total += number
+        }
+        return total / Double(array.count)
+    }
+    
+    // Function to calculate the standard deviation
+    func standardDeviation(array: [Double]) -> Double
+    {
+        let length = Double(array.count)
+        let avg = array.reduce(0, {$0 + $1}) / length
+        let sumOfSquaredAvgDiff = array.map { pow($0 - avg, 2.0)}.reduce(0, {$0 + $1})
+        return sqrt(sumOfSquaredAvgDiff / length)
+    }
+    
+    // Function to extract some range from an array
+    func subArray<T>(array: [T], s: Int, e: Int) -> [T] {
+        if e > array.count {
+            return []
+        }
+        return Array(array[s..<min(e, array.count)])
+    }
+
+    // Smooth z-score thresholding filter
+    func ThresholdingAlgo(y: [Double],lag: Int,threshold: Double,influence: Double) -> ([Int],[Double],[Double]) {
+        
+        // Create arrays
+        var signals   = Array(repeating: 0, count: y.count)
+        var filteredY = Array(repeating: 0.0, count: y.count)
+        var avgFilter = Array(repeating: 0.0, count: y.count)
+        var stdFilter = Array(repeating: 0.0, count: y.count)
+        
+        // Initialise variables
+        for i in 0...lag-1 {
+            signals[i] = 0
+            filteredY[i] = y[i]
+        }
+        
+        // Start filter
+        avgFilter[lag-1] = arithmeticMean(array: subArray(array: y, s: 0, e: lag-1))
+        stdFilter[lag-1] = standardDeviation(array: subArray(array: y, s: 0, e: lag-1))
+        
+        for i in lag...y.count-1 {
+            if abs(y[i] - avgFilter[i-1]) > threshold*stdFilter[i-1] {
+                if y[i] > avgFilter[i-1] {
+                    signals[i] = 1      // Positive signal
+                } else {
+                    // Negative signals are turned off for this application
+                    //signals[i] = -1       // Negative signal
+                }
+                filteredY[i] = influence*y[i] + (1-influence)*filteredY[i-1]
+            } else {
+                signals[i] = 0          // No signal
+                filteredY[i] = y[i]
+            }
+            // Adjust the filters
+            avgFilter[i] = arithmeticMean(array: subArray(array: filteredY, s: i-lag, e: i))
+            stdFilter[i] = standardDeviation(array: subArray(array: filteredY, s: i-lag, e: i))
+        }
+        
+        return (signals,avgFilter,stdFilter)
+    }
+    
+    
 }
 
 
@@ -144,5 +254,10 @@ extension MenuViewController: CBPeripheralDelegate {
         let val = characteristicASCIIValue.doubleValue
         values.append(val)
         //print(values)
+        if flag < 200 {
+            temp.append(val)
+            flag += 1
+        }
+        //print(temp)
     }
 }

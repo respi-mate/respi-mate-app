@@ -25,11 +25,12 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        // TODO: x and y values. y is from MenuViewController
+        // TODO: time and y values. y is from MenuViewController
         y = myY
-        print(y)
-        
-        
+        for i in 1...y.count {
+            let second = Double(i) * t_period
+            time.append(second)
+        }
         
         // initialises graph upon loading
         setChartValues()
@@ -45,12 +46,15 @@ class HistoryViewController: UIViewController {
     }
     
     
-    // TODO: need to modify based on inputs received
+ 
+    
     func setChartValues() {
+
         
         // sets x and y values
-        let entries = (0..<time.count).map { (i) -> ChartDataEntry in
+        let entries = (0..<y.count).map { (i) -> ChartDataEntry in
             let yVal = y[i]
+            
             let timeVal = time[i]
             return ChartDataEntry(x: timeVal, y: yVal)
         }
@@ -67,6 +71,7 @@ class HistoryViewController: UIViewController {
         // modify lineChartView
         self.lineChartView.dragYEnabled = false
         self.lineChartView.rightAxis.enabled = false
+        self.lineChartView.backgroundColor = .white
         
         //TODO: titles and axes labels to graphs
         
